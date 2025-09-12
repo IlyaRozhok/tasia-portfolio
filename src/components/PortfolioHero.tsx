@@ -102,19 +102,19 @@ const PortfolioHero: React.FC = () => {
 
           {/* Right Side - Text Content */}
           <motion.div
-            className="w-full space-y-6 lg:space-y-8 order-2 lg:order-2 relative z-10 -mt-16 lg:mt-0"
+            className="w-full space-y-6 lg:space-y-8 order-2 lg:order-2 relative z-10 mt-8 lg:mt-0"
             initial={{ opacity: 0, x: 100 }}
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 100 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             {/* Main heading */}
             <motion.div
-              className="space-y-3 lg:space-y-4"
+              className="space-y-3 lg:space-y-4 text-right lg:text-left"
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
-              <motion.h1 className="tracking-widest  text-3xl sm:text-4xl lg:text-5xl font-normal text-white leading-tight uppercase">
+              <motion.h1 className="tracking-widest text-2xl sm:text-4xl lg:text-5xl font-normal text-white leading-tight uppercase">
                 <span className="drop-shadow-[0.5px_0.5px_3px_rgb(255,255,255)]">
                   PROFESSIONAL
                 </span>{" "}
@@ -122,29 +122,29 @@ const PortfolioHero: React.FC = () => {
                   MODEL
                 </span>
               </motion.h1>
-              <motion.h2 className="text-3xl drop-shadow-[0.5px_0.5px_3px_rgb(255,255,255)] sm:text-4xl lg:text-5xl font-normal text-white leading-tight uppercase">
+              <motion.h2 className="text-2xl sm:text-4xl lg:text-5xl drop-shadow-[0.5px_0.5px_3px_rgb(255,255,255)] font-normal text-white leading-tight uppercase">
                 PORTFOLIO
               </motion.h2>
-              <motion.h3 className="text-3xl drop-shadow-[0.5px_0.5px_3px_rgb(255,255,255)] sm:text-4xl lg:text-5xl font-normal text-white leading-tight uppercase">
-                BY TAISIIA <span className="inline-block ml-2">✨</span>
+              <motion.h3 className="text-2xl sm:text-4xl lg:text-5xl drop-shadow-[0.5px_0.5px_3px_rgb(255,255,255)] font-normal text-white leading-tight uppercase">
+                BY TAISIIA
               </motion.h3>
             </motion.div>
 
             {/* Description */}
             <motion.div
-              className="max-w-lg"
+              className="max-w-lg mx-auto lg:mx-0"
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.6, delay: 0.6 }}
             >
-              <motion.p className="text-white/70 leading-relaxed text-sm lg:text-base">
+              <motion.p className="text-white/70 leading-relaxed text-sm lg:text-base text-center lg:text-left">
                 Welcome to my professional modeling journey. Through years of
                 experience in fashion and editorial photography, I've had the
                 privilege to work with talented photographers and creative teams
                 across the industry. Each shoot tells a unique story, capturing
                 moments of elegance, strength, and artistic expression.
               </motion.p>
-              <motion.p className="text-white/70 leading-relaxed text-sm lg:text-base mt-2">
+              <motion.p className="text-white/70 leading-relaxed text-sm lg:text-base mt-2 text-center lg:text-left">
                 This portfolio showcases my versatility as a model, from high
                 fashion editorials to commercial campaigns. Thank you for taking
                 the time to explore my work.
@@ -153,12 +153,13 @@ const PortfolioHero: React.FC = () => {
 
             {/* CTA Button */}
             <motion.div
+              className="flex justify-end lg:justify-start"
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ duration: 0.6, delay: 0.8 }}
             >
               <motion.button
-                className="group relative px-6 py-3 lg:px-8 lg:py-4 bg-transparent border-2 border-primary-500 text-primary-500 font-medium tracking-wider uppercase text-sm lg:text-base"
+                className="group mb-[20px] relative px-6 py-3 lg:px-8 lg:py-4 bg-transparent border-2 border-primary-500 text-primary-500 font-medium tracking-wider uppercase text-sm lg:text-base"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 transition={{ type: "spring", stiffness: 300 }}

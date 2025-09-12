@@ -61,7 +61,8 @@ export default {
       animation: {
         "fade-in": "fadeIn 0.5s ease-in-out",
         "slide-up": "slideUp 0.6s ease-out",
-        marquee: "marquee 60s linear infinite",
+        marquee: "marquee 30s linear infinite",
+        "marquee-mobile": "marquee 20s linear infinite",
         "spin-slow": "spin 8s linear infinite",
         "spin-slow-reverse": "spinReverse 8s linear infinite",
       },

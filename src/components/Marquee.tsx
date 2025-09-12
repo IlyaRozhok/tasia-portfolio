@@ -9,39 +9,39 @@ const Marquee: React.FC = () => {
       {/* Main marquee container */}
       <div className="relative">
         {/* First marquee */}
-        <div className="flex animate-marquee whitespace-nowrap">
-          <div className="flex items-center space-x-8 md:space-x-16">
-            <span className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold tracking-wider text-white">
+        <div className="flex animate-marquee-mobile md:animate-marquee whitespace-nowrap">
+          <div className="flex items-center space-x-4 md:space-x-8 lg:space-x-16">
+            <span className="text-lg md:text-2xl lg:text-3xl xl:text-4xl font-bold tracking-wider text-white">
               TAISIIA FASHION MODEL
             </span>
-            <span className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold tracking-wider text-primary-500">
+            <span className="text-lg md:text-2xl lg:text-3xl xl:text-4xl font-bold tracking-wider text-primary-500">
               PROFESSIONAL PORTFOLIO
             </span>
-            <span className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold tracking-wider text-white">
+            <span className="text-lg md:text-2xl lg:text-3xl xl:text-4xl font-bold tracking-wider text-white">
               ELEGANCE & BEAUTY
             </span>
-            <span className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold tracking-wider text-primary-500">
+            <span className="text-lg md:text-2xl lg:text-3xl xl:text-4xl font-bold tracking-wider text-primary-500">
               ARTISTIC EXPRESSION
             </span>
-            <span className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold tracking-wider text-white">
+            <span className="text-lg md:text-2xl lg:text-3xl xl:text-4xl font-bold tracking-wider text-white">
               FASHION PHOTOGRAPHY
             </span>
           </div>
           {/* Duplicate for seamless loop */}
-          <div className="flex items-center space-x-8 md:space-x-16 ml-8 md:ml-16">
-            <span className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold tracking-wider text-white">
-            TAISIIA FASHION MODEL
+          <div className="flex items-center space-x-4 md:space-x-8 lg:space-x-16 ml-4 md:ml-8 lg:ml-16">
+            <span className="text-lg md:text-2xl lg:text-3xl xl:text-4xl font-bold tracking-wider text-white">
+              TAISIIA FASHION MODEL
             </span>
-            <span className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold tracking-wider text-primary-500">
+            <span className="text-lg md:text-2xl lg:text-3xl xl:text-4xl font-bold tracking-wider text-primary-500">
               PROFESSIONAL PORTFOLIO
             </span>
-            <span className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold tracking-wider text-white">
+            <span className="text-lg md:text-2xl lg:text-3xl xl:text-4xl font-bold tracking-wider text-white">
               ELEGANCE & BEAUTY
             </span>
-            <span className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold tracking-wider text-primary-500">
+            <span className="text-lg md:text-2xl lg:text-3xl xl:text-4xl font-bold tracking-wider text-primary-500">
               ARTISTIC EXPRESSION
             </span>
-            <span className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold tracking-wider text-white">
+            <span className="text-lg md:text-2xl lg:text-3xl xl:text-4xl font-bold tracking-wider text-white">
               FASHION PHOTOGRAPHY
             </span>
           </div>

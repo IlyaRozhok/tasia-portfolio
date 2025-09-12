@@ -27,8 +27,8 @@ const PortfolioHeader: React.FC = () => {
         isScrolled ? "bg-black/95 backdrop-blur-md shadow-lg" : "bg-transparent"
       }`}
     >
-      <nav className="w-full px-6 py-4">
-        <div className="flex items-center justify-center w-full">
+      <nav className="w-full px-6 py-4 bg-black">
+        <div className="flex items-center justify-end w-full">
           {/* Full Width Navigation */}
           <div className="hidden md:flex items-center justify-around space-x-12 w-full">
             <button
