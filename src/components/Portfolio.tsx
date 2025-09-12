@@ -1,6 +1,85 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
+// Import portfolio photos
+import cowboy1 from "../assets/portfolio/cowboy/cowboy-1.jpg";
+import cowboy2 from "../assets/portfolio/cowboy/cowboy-2.jpg";
+import cowboy3 from "../assets/portfolio/cowboy/cowboy-3.jpg";
+import cowboy4 from "../assets/portfolio/cowboy/cowboy-4.jpg";
+import cowboy5 from "../assets/portfolio/cowboy/cowboy-5.jpg";
+import cowboy6 from "../assets/portfolio/cowboy/cowboy-6.jpg";
+import cowboy7 from "../assets/portfolio/cowboy/cowboy-7.jpg";
+import cowboy8 from "../assets/portfolio/cowboy/cowboy-8.jpg";
+import cowboy9 from "../assets/portfolio/cowboy/cowboy-9.jpg";
+import cowboy10 from "../assets/portfolio/cowboy/cowboy-10.jpg";
+import cowboy11 from "../assets/portfolio/cowboy/cowboy-11.jpg";
+import cowboy12 from "../assets/portfolio/cowboy/cowboy-12.jpg";
+
+import dress1 from "../assets/portfolio/dress/dress-1.jpg";
+import dress2 from "../assets/portfolio/dress/dress-2.jpg";
+import dress3 from "../assets/portfolio/dress/dress-3.jpg";
+import dress4 from "../assets/portfolio/dress/dress-4.jpg";
+import dress5 from "../assets/portfolio/dress/dress-5.jpg";
+import dress6 from "../assets/portfolio/dress/dress-6.jpg";
+import dress7 from "../assets/portfolio/dress/dress-7.jpg";
+import dress8 from "../assets/portfolio/dress/dress-8.jpg";
+import dress9 from "../assets/portfolio/dress/dress-9.jpg";
+import dress10 from "../assets/portfolio/dress/dress-10.jpg";
+import dress11 from "../assets/portfolio/dress/dress-11.jpg";
+import dress12 from "../assets/portfolio/dress/dress-12.jpg";
+
+import jeansT1 from "../assets/portfolio/jeans-t/jeans-t-1.jpg";
+import jeansT2 from "../assets/portfolio/jeans-t/jeans-t-2.jpg";
+import jeansT3 from "../assets/portfolio/jeans-t/jeans-t-3.jpg";
+import jeansT4 from "../assets/portfolio/jeans-t/jeans-t-4.jpg";
+import jeansT5 from "../assets/portfolio/jeans-t/jeans-t-5.jpg";
+import jeansT6 from "../assets/portfolio/jeans-t/jeans-t-6.jpg";
+import jeansT7 from "../assets/portfolio/jeans-t/jeans-t-7.jpg";
+import jeansT8 from "../assets/portfolio/jeans-t/jeans-t-8.jpg";
+import jeansT9 from "../assets/portfolio/jeans-t/jeans-t-9.jpg";
+import jeansT10 from "../assets/portfolio/jeans-t/jeans-t-10.jpg";
+import jeansT11 from "../assets/portfolio/jeans-t/jeans-t-11.jpg";
+import jeansT12 from "../assets/portfolio/jeans-t/jeans-t-12.jpg";
+
+import lingerie1 from "../assets/portfolio/lingerie/lingerie-1.jpg";
+import lingerie2 from "../assets/portfolio/lingerie/lingerie-2.jpg";
+import lingerie3 from "../assets/portfolio/lingerie/lingerie-3.jpg";
+import lingerie4 from "../assets/portfolio/lingerie/lingerie-4.jpg";
+import lingerie5 from "../assets/portfolio/lingerie/lingerie-5.jpg";
+import lingerie6 from "../assets/portfolio/lingerie/lingerie-6.jpg";
+import lingerie7 from "../assets/portfolio/lingerie/lingerie-7.jpg";
+import lingerie8 from "../assets/portfolio/lingerie/lingerie-8.jpg";
+import lingerie9 from "../assets/portfolio/lingerie/lingerie-9.jpg";
+import lingerie10 from "../assets/portfolio/lingerie/lingerie-10.jpg";
+import lingerie11 from "../assets/portfolio/lingerie/lingerie-11.jpg";
+import lingerie12 from "../assets/portfolio/lingerie/lingerie-12.jpg";
+
+import swim1 from "../assets/portfolio/swim/swim-1.jpg";
+import swim2 from "../assets/portfolio/swim/swim-2.jpg";
+import swim3 from "../assets/portfolio/swim/swim-3.jpg";
+import swim4 from "../assets/portfolio/swim/swim-4.jpg";
+import swim5 from "../assets/portfolio/swim/swim-5.jpg";
+import swim6 from "../assets/portfolio/swim/swim-6.jpg";
+import swim7 from "../assets/portfolio/swim/swim-7.jpg";
+import swim8 from "../assets/portfolio/swim/swim-8.jpg";
+import swim9 from "../assets/portfolio/swim/swim-9.jpg";
+import swim10 from "../assets/portfolio/swim/swim-10.jpg";
+import swim11 from "../assets/portfolio/swim/swim-11.jpg";
+import swim12 from "../assets/portfolio/swim/swim-12.jpg";
+
+import suit1 from "../assets/portfolio/suit/suit_1.jpg";
+import suit2 from "../assets/portfolio/suit/suit_2.jpg";
+import suit3 from "../assets/portfolio/suit/suit_3.jpg";
+import suit4 from "../assets/portfolio/suit/suit_4.jpg";
+import suit5 from "../assets/portfolio/suit/suit_5.jpg";
+import suit6 from "../assets/portfolio/suit/suit_6.jpg";
+import suit7 from "../assets/portfolio/suit/suit_7.jpg";
+import suit8 from "../assets/portfolio/suit/suit_8.jpg";
+import suit9 from "../assets/portfolio/suit/suit_9.jpg";
+import suit10 from "../assets/portfolio/suit/suit_10.jpg";
+import suit11 from "../assets/portfolio/suit/suit_11.jpg";
+import suit12 from "../assets/portfolio/suit/suit_12.jpg";
+
 interface PortfolioItem {
   id: number;
   title: string;
@@ -13,75 +92,135 @@ interface PortfolioItem {
 const portfolioItems: PortfolioItem[] = [
   {
     id: 1,
-    title: "Fashion Editorial",
-    category: "Editorial",
-    image: "/api/placeholder/400/600",
+    title: "Cowboy Style",
+    category: "Fashion",
+    image: cowboy1,
     description:
-      "High-fashion editorial shoot showcasing elegance and sophistication. This collection represents the perfect blend of artistic vision and professional modeling expertise.",
-    gallery: Array.from(
-      { length: 12 },
-      (_, i) => `/api/placeholder/600/800?text=Editorial+${i + 1}`
-    ),
+      "Western-inspired fashion shoot showcasing rugged elegance and contemporary cowboy aesthetics. This collection blends traditional western elements with modern fashion sensibilities.",
+    gallery: [
+      cowboy1,
+      cowboy2,
+      cowboy3,
+      cowboy4,
+      cowboy5,
+      cowboy6,
+      cowboy7,
+      cowboy8,
+      cowboy9,
+      cowboy10,
+      cowboy11,
+      cowboy12,
+    ],
   },
   {
     id: 2,
-    title: "Commercial Campaign",
-    category: "Commercial",
-    image: "/api/placeholder/400/600",
+    title: "Elegant Dresses",
+    category: "Editorial",
+    image: dress1,
     description:
-      "Commercial campaign featuring modern lifestyle and contemporary fashion. Professional modeling with focus on brand storytelling and market appeal.",
-    gallery: Array.from(
-      { length: 12 },
-      (_, i) => `/api/placeholder/600/800?text=Commercial+${i + 1}`
-    ),
+      "Sophisticated dress collection featuring elegant silhouettes and refined styling. Professional modeling that highlights the beauty and grace of contemporary fashion design.",
+    gallery: [
+      dress1,
+      dress2,
+      dress3,
+      dress4,
+      dress5,
+      dress6,
+      dress7,
+      dress8,
+      dress9,
+      dress10,
+      dress11,
+      dress12,
+    ],
   },
   {
     id: 3,
-    title: "Artistic Portrait",
-    category: "Portrait",
-    image: "/api/placeholder/400/600",
+    title: "Casual Jeans & T-Shirts",
+    category: "Lifestyle",
+    image: jeansT1,
     description:
-      "Artistic portrait session exploring the depth of human expression. A collaborative work between photographer and model to create timeless imagery.",
-    gallery: Array.from(
-      { length: 12 },
-      (_, i) => `/api/placeholder/600/800?text=Portrait+${i + 1}`
-    ),
+      "Casual lifestyle shoot featuring everyday fashion essentials. This collection captures the effortless style and comfort of contemporary casual wear.",
+    gallery: [
+      jeansT1,
+      jeansT2,
+      jeansT3,
+      jeansT4,
+      jeansT5,
+      jeansT6,
+      jeansT7,
+      jeansT8,
+      jeansT9,
+      jeansT10,
+      jeansT11,
+      jeansT12,
+    ],
   },
   {
     id: 4,
-    title: "Beauty Campaign",
-    category: "Beauty",
-    image: "/api/placeholder/400/600",
+    title: "Intimate Lingerie",
+    category: "Intimate",
+    image: lingerie1,
     description:
-      "Beauty campaign focusing on natural elegance and skincare. Professional modeling that highlights the authentic beauty and confidence of the modern woman.",
-    gallery: Array.from(
-      { length: 12 },
-      (_, i) => `/api/placeholder/600/800?text=Beauty+${i + 1}`
-    ),
+      "Delicate lingerie collection showcasing feminine elegance and sophisticated intimate wear. Professional modeling with focus on comfort, beauty, and confidence.",
+    gallery: [
+      lingerie1,
+      lingerie2,
+      lingerie3,
+      lingerie4,
+      lingerie5,
+      lingerie6,
+      lingerie7,
+      lingerie8,
+      lingerie9,
+      lingerie10,
+      lingerie11,
+      lingerie12,
+    ],
   },
   {
     id: 5,
-    title: "Lifestyle Photography",
-    category: "Lifestyle",
-    image: "/api/placeholder/400/600",
+    title: "Swimwear Collection",
+    category: "Swimwear",
+    image: swim1,
     description:
-      "Lifestyle photography capturing authentic moments and everyday elegance. A blend of candid and posed shots that tell a compelling story of modern living.",
-    gallery: Array.from(
-      { length: 12 },
-      (_, i) => `/api/placeholder/600/800?text=Lifestyle+${i + 1}`
-    ),
+      "Summer swimwear collection featuring contemporary beach and pool fashion. Professional modeling that celebrates body confidence and summer style.",
+    gallery: [
+      swim1,
+      swim2,
+      swim3,
+      swim4,
+      swim5,
+      swim6,
+      swim7,
+      swim8,
+      swim9,
+      swim10,
+      swim11,
+      swim12,
+    ],
   },
   {
     id: 6,
-    title: "Fashion Lookbook",
-    category: "Lookbook",
-    image: "/api/placeholder/400/600",
+    title: "Professional Suits",
+    category: "Business",
+    image: suit1,
     description:
-      "Fashion lookbook featuring seasonal collections and trend-setting styles. Professional modeling that brings designer visions to life with style and grace.",
-    gallery: Array.from(
-      { length: 12 },
-      (_, i) => `/api/placeholder/600/800?text=Lookbook+${i + 1}`
-    ),
+      "Professional business attire collection showcasing power dressing and corporate elegance. Sophisticated modeling that embodies confidence and professional excellence.",
+    gallery: [
+      suit1,
+      suit2,
+      suit3,
+      suit4,
+      suit5,
+      suit6,
+      suit7,
+      suit8,
+      suit9,
+      suit10,
+      suit11,
+      suit12,
+    ],
   },
 ];
 
@@ -157,11 +296,6 @@ const Portfolio: React.FC = () => {
   useEffect(() => {
     setCurrentIndex(3); // Start from original items (after 3 duplicates)
   }, [itemsPerView]);
-
-  const visibleItems = portfolioItems.slice(
-    currentIndex,
-    currentIndex + itemsPerView
-  );
 
   // Check if card should be visible on mobile
   const isCardVisible = (index: number) => {
@@ -284,14 +418,13 @@ const Portfolio: React.FC = () => {
                   onClick={() => openModal(item)}
                 >
                   <div className="relative overflow-hidden rounded-xl shadow-2xl bg-gradient-to-br from-neutral-800 to-neutral-900">
-                    {/* Image placeholder */}
-                    <div className="aspect-[3/4] bg-gradient-to-br from-neutral-700 to-neutral-800 flex items-center justify-center">
-                      <div className="text-center text-white/60">
-                        <div className="w-16 h-16 mx-auto mb-4 border-2 border-white/30 rounded-full flex items-center justify-center">
-                          <span className="text-2xl">📸</span>
-                        </div>
-                        <p className="text-sm">{item.title}</p>
-                      </div>
+                    {/* Main Image */}
+                    <div className="aspect-[3/4] overflow-hidden">
+                      <img
+                        src={item.image}
+                        alt={item.title}
+                        className="w-full h-full object-cover"
+                      />
                     </div>
 
                     {/* Overlay */}
@@ -407,14 +540,12 @@ const Portfolio: React.FC = () => {
                         transition={{ duration: 0.5, delay: index * 0.1 }}
                         whileHover={{ scale: 1.02 }}
                       >
-                        <div className="aspect-[3/4] bg-gradient-to-br from-neutral-700 to-neutral-800 flex items-center justify-center">
-                          <div className="text-center text-white/60">
-                            <div className="w-16 h-16 mx-auto mb-4 border-2 border-white/30 rounded-full flex items-center justify-center">
-                              <span className="text-xl">📸</span>
-                            </div>
-                            <p className="text-sm">{selectedItem.title}</p>
-                            <p className="text-xs mt-1">Photo {index + 1}</p>
-                          </div>
+                        <div className="aspect-[3/4] overflow-hidden">
+                          <img
+                            src={photo}
+                            alt={`${selectedItem.title} - Photo ${index + 1}`}
+                            className="w-full h-full object-cover"
+                          />
                         </div>
 
                         {/* Overlay */}

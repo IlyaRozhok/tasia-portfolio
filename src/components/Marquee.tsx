@@ -12,7 +12,7 @@ const Marquee: React.FC = () => {
         <div className="flex animate-marquee whitespace-nowrap">
           <div className="flex items-center space-x-8 md:space-x-16">
             <span className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold tracking-wider text-white">
-              TASIA FASHION MODEL
+              TAISIIA FASHION MODEL
             </span>
             <span className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold tracking-wider text-primary-500">
               PROFESSIONAL PORTFOLIO
@@ -30,7 +30,7 @@ const Marquee: React.FC = () => {
           {/* Duplicate for seamless loop */}
           <div className="flex items-center space-x-8 md:space-x-16 ml-8 md:ml-16">
             <span className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold tracking-wider text-white">
-              TASIA FASHION MODEL
+            TAISIIA FASHION MODEL
             </span>
             <span className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold tracking-wider text-primary-500">
               PROFESSIONAL PORTFOLIO

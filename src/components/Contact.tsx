@@ -70,7 +70,7 @@ const Contact: React.FC = () => {
                 <img
                   alt={method.title}
                   src={method.icon}
-                  className="w-6 h-6 filter invert object-contain"
+                  className="w-6 h-6 object-contain"
                 />
               </div>
               <h3 className="text-base font-semibold text-white mb-2">

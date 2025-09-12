@@ -8,6 +8,14 @@ const PortfolioHero: React.FC = () => {
   const ref = React.useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.3 });
 
+  // Function to scroll to portfolio section
+  const scrollToPortfolio = () => {
+    const portfolioSection = document.getElementById("portfolio");
+    if (portfolioSection) {
+      portfolioSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start start", "end start"],
@@ -39,7 +47,7 @@ const PortfolioHero: React.FC = () => {
           >
             {/* Large asterisk decoration */}
             <motion.div
-              className="absolute z-10 -left-[-15px] top-[50px] w-[50px] text-white text-8xl font-thin"
+              className="absolute z-10  -bottom-[20px] left-[18px] w-[50px] text-white text-8xl font-thin"
               style={{ y: y1, rotate }}
             >
               <img src={star} alt="star" />
@@ -56,22 +64,12 @@ const PortfolioHero: React.FC = () => {
                 {/* Placeholder for image */}
                 <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-secondary-700 to-secondary-800">
                   <img src={tasiaMain} alt="tasia-main" />
-                  {/* <div className="text-center">
-                    <div className="w-24 h-24 lg:w-32 lg:h-32 bg-primary-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <span className="text-black text-3xl lg:text-4xl font-bold">
-                        T
-                      </span>
-                    </div>
-                    <p className="text-white/60 text-sm lg:text-base">
-                      Professional Photo
-                    </p>
-                  </div> */}
                 </div>
               </motion.div>
 
               {/* Circular decoration with text - Hidden on mobile */}
               <motion.div
-                className="absolute -bottom-[120px] -left-[25px] hidden lg:block"
+                className="absolute left-[-55px] top-[-50px] hidden lg:block"
                 style={{ y: y3 }}
               >
                 <span className="font-light transform">
@@ -88,7 +86,7 @@ const PortfolioHero: React.FC = () => {
                       />
                     </defs>
                     <text
-                      fill="white"
+                      fill="#c1121f"
                       fontSize="19"
                       className="font-rubik uppercase tracking-[4px]"
                     >
@@ -116,14 +114,19 @@ const PortfolioHero: React.FC = () => {
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
-              <motion.h1 className="tracking-widest text-3xl sm:text-4xl lg:text-5xl font-normal text-white leading-tight uppercase">
-                PROFESSIONAL <span className="text-primary-500">MODEL</span>
+              <motion.h1 className="tracking-widest  text-3xl sm:text-4xl lg:text-5xl font-normal text-white leading-tight uppercase">
+                <span className="drop-shadow-[0.5px_0.5px_3px_rgb(255,255,255)]">
+                  PROFESSIONAL
+                </span>{" "}
+                <span className="text-primary-500 drop-shadow-[1px_1px_4px_rgb(200,175,150)]">
+                  MODEL
+                </span>
               </motion.h1>
-              <motion.h2 className="text-3xl sm:text-4xl lg:text-5xl font-normal text-white leading-tight uppercase">
+              <motion.h2 className="text-3xl drop-shadow-[0.5px_0.5px_3px_rgb(255,255,255)] sm:text-4xl lg:text-5xl font-normal text-white leading-tight uppercase">
                 PORTFOLIO
               </motion.h2>
-              <motion.h3 className="text-3xl sm:text-4xl lg:text-5xl font-normal text-white leading-tight uppercase">
-                BY TASIA <span className="inline-block ml-2">✨</span>
+              <motion.h3 className="text-3xl drop-shadow-[0.5px_0.5px_3px_rgb(255,255,255)] sm:text-4xl lg:text-5xl font-normal text-white leading-tight uppercase">
+                BY TAISIIA <span className="inline-block ml-2">✨</span>
               </motion.h3>
             </motion.div>
 
@@ -159,6 +162,7 @@ const PortfolioHero: React.FC = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 transition={{ type: "spring", stiffness: 300 }}
+                onClick={scrollToPortfolio}
               >
                 <span className="relative z-10">Explore Portfolio</span>
                 <motion.div
