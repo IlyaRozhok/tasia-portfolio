@@ -60,13 +60,6 @@ const Services: React.FC = () => {
   const ref = React.useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.3 });
 
-  const scrollToContact = () => {
-    const contactSection = document.getElementById("contact");
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start end", "end start"],

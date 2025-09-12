@@ -1,7 +1,6 @@
 import React from "react";
 import { motion, useScroll, useTransform, useInView } from "framer-motion";
 import tasiaAbout1 from "../assets/tasia-about-1.jpg";
-import tasiaAbout2 from "../assets/tasia-about-2.jpg";
 
 const About: React.FC = () => {
   const ref = React.useRef(null);
