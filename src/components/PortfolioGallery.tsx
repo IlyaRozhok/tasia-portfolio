@@ -119,7 +119,7 @@ const PortfolioGallery: React.FC = () => {
             <div className="space-y-8">
               {/* Vertical text */}
               <div className="writing-mode-vertical text-white text-lg font-medium space-y-4">
-                <div>2024</div>
+                <div>2025</div>
                 <div>PORTFOLIO</div>
                 <div>SHOWCASE</div>
               </div>

@@ -23,7 +23,7 @@ const PortfolioHeader: React.FC = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-t-2 border-b-2 border-white ${
+      className={`fixed mt-2 top-0 left-0 right-0 z-50 transition-all duration-300 border-t-2 border-b-2 border-white ${
         isScrolled ? "bg-black/95 backdrop-blur-md shadow-lg" : "bg-transparent"
       }`}
     >
@@ -52,10 +52,10 @@ const PortfolioHeader: React.FC = () => {
               PORTFOLIO
             </button>
             <button
-              onClick={() => scrollToSection("gallery")}
+              onClick={() => scrollToSection("services")}
               className="text-white hover:text-primary-500 transition-colors duration-200 text-sm font-medium relative group"
             >
-              GALLERY
+              SERVICES
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary-500 transition-all duration-200 group-hover:w-full"></span>
             </button>
             <button
@@ -118,10 +118,10 @@ const PortfolioHeader: React.FC = () => {
               PORTFOLIO
             </button>
             <button
-              onClick={() => scrollToSection("gallery")}
+              onClick={() => scrollToSection("services")}
               className="block w-full text-left text-white hover:text-primary-500 transition-colors duration-200 text-sm font-medium"
             >
-              GALLERY
+              SERVICES
             </button>
             <button
               onClick={() => scrollToSection("contact")}
