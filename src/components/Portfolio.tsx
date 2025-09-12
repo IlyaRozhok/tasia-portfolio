@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 // Import portfolio photos
@@ -232,11 +232,14 @@ const Portfolio: React.FC = () => {
 
   // Create infinite carousel by duplicating items
   // Always duplicate 3 items for smooth transitions on all screen sizes
-  const infiniteItems = [
-    ...portfolioItems.slice(-3), // Last 3 items at the beginning
-    ...portfolioItems, // Original items
-    ...portfolioItems.slice(0, 3), // First 3 items at the end
-  ];
+  const infiniteItems = useMemo(
+    () => [
+      ...portfolioItems.slice(-3), // Last 3 items at the beginning
+      ...portfolioItems, // Original items
+      ...portfolioItems.slice(0, 3), // First 3 items at the end
+    ],
+    []
+  );
 
   // Update items per view based on screen size
   useEffect(() => {
@@ -294,23 +297,16 @@ const Portfolio: React.FC = () => {
 
   // Reset position when itemsPerView changes
   useEffect(() => {
-    setCurrentIndex(3); // Start from original items (after 3 duplicates)
+    // Always start from the first original item (index 3 in infiniteItems)
+    setCurrentIndex(3);
   }, [itemsPerView]);
 
   // Check if card should be visible on mobile
-  const isCardVisible = (index: number) => {
-    if (itemsPerView === 1) {
-      // On mobile, only show the current card
-      return index === currentIndex;
-    }
-    // On desktop/tablet, show all cards in view
-    return true;
-  };
 
   return (
     <section
       id="portfolio"
-      className="relative min-h-screen bg-gradient-to-b from-neutral-900 via-black to-neutral-900 py-20 overflow-hidden"
+      className="relative min-h-screen bg-gradient-to-b from-neutral-900 via-black to-neutral-900 py-10 md:py-20 overflow-hidden"
     >
       {/* Background decorative elements */}
       <div className="absolute inset-0">
@@ -326,7 +322,7 @@ const Portfolio: React.FC = () => {
       <div className="relative z-10 container mx-auto px-4">
         {/* Section Header */}
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-8 md:mb-16"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -343,7 +339,7 @@ const Portfolio: React.FC = () => {
             Featured
             <span className="block text-primary-500">Work</span>
           </h2>
-          <p className="text-white/70 text-lg mt-6 max-w-2xl mx-auto">
+          <p className="text-white/70 text-sm sm:text-base lg:text-lg mt-4 md:mt-6 max-w-2xl mx-auto px-4">
             Explore my professional modeling portfolio featuring editorial,
             commercial, and artistic photography.
           </p>
@@ -352,15 +348,15 @@ const Portfolio: React.FC = () => {
         {/* Portfolio Slider */}
         <div className="relative max-w-6xl mx-auto">
           {/* Navigation Buttons */}
-          <div className="flex justify-between items-center mb-8">
+          <div className="flex justify-between items-center mb-4 md:mb-8 px-4 md:px-0">
             <motion.button
               onClick={prevSlide}
-              className="w-12 h-12 bg-black/50 hover:bg-black/70 rounded-full flex items-center justify-center text-white transition-colors duration-200 border border-white/20"
+              className="w-10 h-10 md:w-12 md:h-12 bg-black/50 hover:bg-black/70 rounded-full flex items-center justify-center text-white transition-colors duration-200 border border-white/20"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
             >
               <svg
-                className="w-6 h-6"
+                className="w-5 h-5 md:w-6 md:h-6"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -376,12 +372,12 @@ const Portfolio: React.FC = () => {
 
             <motion.button
               onClick={nextSlide}
-              className="w-12 h-12 bg-black/50 hover:bg-black/70 rounded-full flex items-center justify-center text-white transition-colors duration-200 border border-white/20"
+              className="w-10 h-10 md:w-12 md:h-12 bg-black/50 hover:bg-black/70 rounded-full flex items-center justify-center text-white transition-colors duration-200 border border-white/20"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
             >
               <svg
-                className="w-6 h-6"
+                className="w-5 h-5 md:w-6 md:h-6"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -399,25 +395,29 @@ const Portfolio: React.FC = () => {
           {/* Slider Container */}
           <div className="relative overflow-hidden">
             <motion.div
-              className="flex gap-8 md:gap-8 gap-0"
-              animate={{ x: -currentIndex * (100 / itemsPerView) + "%" }}
+              className="flex gap-4 md:gap-8"
+              animate={{
+                x:
+                  itemsPerView === 1
+                    ? -currentIndex * 100 + "%"
+                    : -currentIndex * (100 / itemsPerView) + "%",
+              }}
               transition={{ duration: 0.5, ease: "easeInOut" }}
             >
               {infiniteItems.map((item, index) => (
                 <motion.div
                   key={`${item.id}-${index}`}
-                  className="group cursor-pointer flex-shrink-0"
+                  className={`group cursor-pointer flex-shrink-0`}
                   style={{
-                    width: `${100 / itemsPerView}%`,
-                    display: isCardVisible(index) ? "block" : "none",
+                    width:
+                      itemsPerView === 1 ? "100%" : `${100 / itemsPerView}%`,
                   }}
                   initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
+                  animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
                   onClick={() => openModal(item)}
                 >
-                  <div className="relative overflow-hidden rounded-xl shadow-2xl bg-gradient-to-br from-neutral-800 to-neutral-900">
+                  <div className="relative overflow-hidden rounded-lg md:rounded-xl shadow-2xl bg-gradient-to-br from-neutral-800 to-neutral-900 mx-2 md:mx-0">
                     {/* Main Image */}
                     <div className="aspect-[3/4] overflow-hidden">
                       <img
@@ -431,22 +431,22 @@ const Portfolio: React.FC = () => {
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
                     {/* Content */}
-                    <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                    <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 text-white">
                       <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                        <span className="text-primary-500 text-sm font-medium tracking-wider uppercase">
+                        <span className="text-primary-500 text-xs md:text-sm font-medium tracking-wider uppercase">
                           {item.category}
                         </span>
-                        <h3 className="text-xl font-bold mt-2 mb-2">
+                        <h3 className="text-lg md:text-xl font-bold mt-1 md:mt-2 mb-1 md:mb-2">
                           {item.title}
                         </h3>
-                        <p className="text-white/70 text-sm">
+                        <p className="text-white/70 text-xs md:text-sm">
                           Click to view details
                         </p>
                       </div>
                     </div>
 
                     {/* Decorative frame */}
-                    <div className="absolute -inset-2 border border-white/10 rounded-xl" />
+                    <div className="absolute -inset-1 md:-inset-2 border border-white/10 rounded-lg md:rounded-xl" />
                   </div>
                 </motion.div>
               ))}
@@ -567,24 +567,6 @@ const Portfolio: React.FC = () => {
                         <div className="absolute -inset-1 border border-white/10 rounded-xl" />
                       </motion.div>
                     ))}
-                  </div>
-
-                  {/* Action Buttons */}
-                  <div className="flex flex-col justify-end sm:flex-row gap-4 mt-12 pt-8 border-t border-white/10">
-                    <motion.button
-                      className="px-8 py-3 bg-primary-500 text-black font-medium tracking-wider uppercase rounded-lg hover:bg-primary-400 transition-colors duration-200"
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      Download Portfolio
-                    </motion.button>
-                    <motion.button
-                      className="px-8 py-3 border-2 border-white/20 text-white font-medium tracking-wider uppercase rounded-lg hover:border-white/40 transition-colors duration-200"
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      Contact for Booking
-                    </motion.button>
                   </div>
                 </div>
               </div>

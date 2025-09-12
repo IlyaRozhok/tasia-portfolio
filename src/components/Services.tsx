@@ -22,7 +22,7 @@ const services: Service[] = [
       "Brand Campaigns",
       "Social Media Content",
     ],
-    price: "From $500/session",
+    price: "For price ",
     color: "from-slate-700/50 to-gray-900/90",
   },
   {
@@ -196,11 +196,11 @@ const Services: React.FC = () => {
                   </div>
 
                   {/* Price */}
-                  <div className="flex items-center justify-between">
+                  {/* <div className="flex items-center justify-between">
                     <span className="text-primary-500 font-bold text-lg">
                       {service.price}
                     </span>
-                  </div>
+                  </div> */}
                 </div>
 
                 {/* Decorative Elements */}
@@ -223,24 +223,23 @@ const Services: React.FC = () => {
               Why Choose Professional Modeling?
             </h3>
             <p className="text-white/70 text-lg leading-relaxed mb-6">
-              With years of experience in fashion, commercial, and lifestyle
-              modeling, I bring professionalism, creativity, and reliability to
-              every project. From high-end fashion brands to local restaurants,
-              I help businesses create compelling visual content that drives
-              results.
+              <motion.p
+                className="text-lg text-white/80 leading-relaxed"
+                initial={{ opacity: 0, y: 20 }}
+                animate={
+                  isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
+                }
+                transition={{ duration: 0.6, delay: 1.2 }}
+              >
+                Just like it :) I work closely with photographers and creative
+                teams to bring their visions to life through authentic and
+                compelling imagery.
+              </motion.p>
             </p>
             <div className="grid md:grid-cols-3 gap-6 mt-8">
               <div className="text-center">
                 <div className="text-3xl font-bold text-primary-500 mb-2">
-                  5+
-                </div>
-                <div className="text-sm text-white/60 uppercase tracking-wider">
-                  Years Experience
-                </div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-primary-500 mb-2">
-                  100+
+                  6+
                 </div>
                 <div className="text-sm text-white/60 uppercase tracking-wider">
                   Successful Projects
@@ -248,7 +247,7 @@ const Services: React.FC = () => {
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-primary-500 mb-2">
-                  24/7
+                  Online
                 </div>
                 <div className="text-sm text-white/60 uppercase tracking-wider">
                   Professional Support

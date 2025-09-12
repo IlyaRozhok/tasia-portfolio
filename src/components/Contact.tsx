@@ -2,6 +2,7 @@ import React from "react";
 import inst from "../assets/inst.svg";
 import phone from "../assets/phone.svg";
 import email from "../assets/email.svg";
+import telegram from "../assets/telegram.svg";
 
 interface ContactMethod {
   id: number;
@@ -33,6 +34,13 @@ const contactMethods: ContactMethod[] = [
     value: "@tttasssia",
     link: "https://www.instagram.com/tttasssia/",
   },
+  {
+    id: 4,
+    title: "Telegram",
+    icon: telegram,
+    value: "@tasiiazhu",
+    link: "https://t.me/tasiiazhu",
+  },
 ];
 
 const Contact: React.FC = () => {
@@ -58,20 +66,20 @@ const Contact: React.FC = () => {
         </div>
 
         {/* Contact Methods */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-4xl mx-auto mb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-6xl mx-auto mb-8">
           {contactMethods.map((method) => (
             <a
               key={method.id}
               href={method.link}
-              target={method.title === "Instagram" ? "_blank" : undefined}
+              target={
+                method.title === "Instagram" || method.title === "Telegram"
+                  ? "_blank"
+                  : undefined
+              }
               className="group text-center p-6 rounded-xl bg-gradient-to-br from-neutral-800/50 to-neutral-900/50 border border-white/10 hover:border-primary-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary-500/10"
             >
               <div className="w-12 h-12 bg-gradient-to-br from-primary-500/20 to-primary-600/20 rounded-lg flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform duration-300">
-                <img
-                  alt={method.title}
-                  src={method.icon}
-                  className="w-6 h-6 object-contain"
-                />
+                <img alt={method.title} src={method.icon} className="w-6 h-6" />
               </div>
               <h3 className="text-base font-semibold text-white mb-2">
                 {method.title}
@@ -86,7 +94,7 @@ const Contact: React.FC = () => {
         {/* Bottom */}
         <div className="text-center pt-4 border-t border-white/10">
           <p className="text-white/60 text-sm">
-            © 2024 Tasia Model. Professional modeling services.
+            © 2025 Tasia Model. Professional modeling services.
           </p>
         </div>
       </div>

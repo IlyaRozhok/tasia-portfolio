@@ -40,7 +40,7 @@ const About: React.FC = () => {
     <motion.section
       id="about"
       ref={ref}
-      className="relative min-h-screen bg-gradient-to-b from-neutral-900 via-black to-neutral-900 overflow-hidden"
+      className="relative mt-5 min-h-screen bg-gradient-to-b from-neutral-900 via-black to-neutral-900 overflow-hidden"
       style={{ opacity }}
     >
       {/* Feminine animated background with soft parallax */}
@@ -100,13 +100,13 @@ const About: React.FC = () => {
             <div className="w-16 h-px bg-primary-500"></div>
           </motion.div>
           <motion.h2
-            className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight"
+            className="text-4xl md:text-4xl lg:text-5xl font-bold text-white leading-tight"
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
             Professional
-            <span className="block text-primary-500">Fashion Model</span>
+            <span className="block text-primary-500">Photo Model</span>
           </motion.h2>
         </motion.div>
 
@@ -167,23 +167,12 @@ const About: React.FC = () => {
                   }
                   transition={{ duration: 0.6, delay: 1.0 }}
                 >
-                  With years of experience in the fashion industry, I bring
-                  elegance, professionalism, and artistic vision to every
-                  project. My portfolio showcases versatility across various
-                  styles and concepts.
-                </motion.p>
-
-                <motion.p
-                  className="text-lg text-white/80 leading-relaxed"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={
-                    isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
-                  }
-                  transition={{ duration: 0.6, delay: 1.2 }}
-                >
-                  From high-fashion editorials to commercial campaigns, I work
-                  closely with photographers and creative teams to bring their
-                  visions to life through authentic and compelling imagery.
+                  I am located in Odessa and am open to new photo shoots. My
+                  appearance is harmoniously revealed in light and summery
+                  images, and the emphasis on lingerie photo shoots highlights
+                  my femininity and figure aesthetics. At the same time, I
+                  easily adapt to different photo shoot formats, maintaining the
+                  softness and naturalness of the frame.
                 </motion.p>
               </motion.div>
 
@@ -237,22 +226,22 @@ const About: React.FC = () => {
                 }
                 transition={{ duration: 0.6, delay: 1.6 }}
               >
-                <motion.div className="text-center group">
+                {/* <motion.div className="text-center group">
                   <div className="text-4xl font-bold text-primary-500 mb-2">
                     5+
                   </div>
                   <div className="text-sm text-white/60 uppercase tracking-wider">
                     Years Experience
                   </div>
-                </motion.div>
-                <motion.div className="text-center group">
+                </motion.div> */}
+                {/* <motion.div className="text-center group">
                   <div className="text-4xl font-bold text-primary-500 mb-2">
                     100+
                   </div>
                   <div className="text-sm text-white/60 uppercase tracking-wider">
                     Projects Completed
                   </div>
-                </motion.div>
+                </motion.div> */}
               </motion.div>
             </motion.div>
           </div>
