@@ -175,6 +175,25 @@ const About: React.FC = () => {
                   softness and naturalness of the frame.
                 </motion.p>
               </motion.div>
+              <motion.p
+                className="text-lg text-white/80 leading-relaxed"
+                initial={{ opacity: 0, y: 20 }}
+                animate={
+                  isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
+                }
+                transition={{ duration: 0.6, delay: 1.0 }}
+              >
+                <div className="text-lg text-white/80 leading-relaxed">
+                  Height: 175 cm <br /> Measurements: Bust 87 / Waist 61 / Hips
+                  92
+                  <br />
+                  Shoe size: 38 EU
+                  <br />
+                  Eye color: green
+                  <br />
+                  Hair color: light brown
+                </div>
+              </motion.p>
 
               {/* Collaboration section */}
               <motion.div

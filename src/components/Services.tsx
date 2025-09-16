@@ -27,14 +27,13 @@ const services: Service[] = [
   },
   {
     id: 2,
-    title: "Restaurant & Food",
+    title: "Active Wear & Swim",
     description:
-      "Elegant modeling for restaurant menus, food photography, and culinary brand campaigns.",
+      "Dynamic modeling for active wear, swimwear, and lingerie brands. Perfect for fitness, beach, and intimate apparel campaigns.",
     features: [
-      "Menu Photography",
-      "Food Styling",
-      "Restaurant Campaigns",
-      "Culinary Brands",
+      "Active Wear Campaigns",
+      "Swimwear Photography",
+      "Lingerie Modeling",
     ],
     price: "From $400/session",
     color: "from-slate-700/50 to-gray-900/90",
@@ -132,9 +131,9 @@ const Services: React.FC = () => {
             <span className="block text-primary-500">Modeling Services</span>
           </h2>
           <p className="text-white/70 text-lg mt-6 max-w-2xl mx-auto">
-            Specialized modeling services for brands, restaurants, and lifestyle
-            campaigns. Professional, reliable, and creative solutions for your
-            business needs.
+            Specialized modeling services for fashion brands, active wear,
+            swimwear, and lifestyle campaigns. Professional, reliable, and
+            creative solutions for your business needs.
           </p>
         </motion.div>
 
@@ -251,6 +250,14 @@ const Services: React.FC = () => {
                 </div>
                 <div className="text-sm text-white/60 uppercase tracking-wider">
                   Professional Support
+                </div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-primary-500 mb-2">
+                  Shots taken
+                </div>
+                <div className="text-sm text-white/60 uppercase tracking-wider">
+                  2000+
                 </div>
               </div>
             </div>
